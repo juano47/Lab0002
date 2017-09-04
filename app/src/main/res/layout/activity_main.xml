@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="padula.delaiglesia.dam.isi.frsf.lab0002.MainActivity"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtPediteLaCena"
+        android:text="Pedite la cena!!!"
+        android:textSize="26dp"/>
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New ToggleButton"
+        android:id="@+id/toggleButton"
+        android:layout_below="@+id/txtPediteLaCena"
+        android:textOff="RESERVAR MESA"
+        android:textOn="DELIVERY" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seleccione el horario"
+        android:id="@+id/textView" />
+
+    <Spinner
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:id="@+id/scrollView" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textView2" />
+    </ScrollView>
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reserva 1 hora antes     "
+        android:id="@+id/switch1"
+        android:layout_gravity="right" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/visualRadioGrupo"
+        >
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plato"
+            android:id="@+id/radioButtonPlato"
+            android:layout_marginRight="20dp"
+            android:checked="true"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Postre"
+            android:id="@+id/radioButtonPostre"
+            android:layout_marginRight="20dp"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bebida"
+            android:id="@+id/radioButtonBebida"
+            android:layout_marginRight="20dp"/>
+    </RadioGroup>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.05">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AGREGAR"
+            android:id="@+id/buttonAgregar" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CONFIRMAR PEDIDO"
+            android:id="@+id/buttonConfirmarPedido" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REINICIAR"
+            android:id="@+id/buttonReiniciar" />
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="222dp"
+        android:id="@+id/lista" />
+
+</LinearLayout>
