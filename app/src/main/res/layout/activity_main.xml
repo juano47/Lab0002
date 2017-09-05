@@ -111,6 +111,7 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="222dp"
-        android:id="@+id/lista" />
+        android:id="@+id/lista"
+        android:choiceMode="singleChoice"/>
 
 </LinearLayout>
