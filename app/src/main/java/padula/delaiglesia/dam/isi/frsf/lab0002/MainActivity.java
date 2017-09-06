@@ -8,16 +8,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
-import java.io.Console;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,14 +27,25 @@ public class MainActivity extends AppCompatActivity {
     private int idRadioButtonSeleccionado;
     private Button buttonAgregar;
     private boolean pedidoConfirmado = false;
-    private TextView textView2;
+    private TextView txtPedido;
+    private Button buttonConfirmarPedido;
+    private Button buttonReiniciar;
+    private String[] horarios = new String[] {"20.00", "20.30", "21.00", "21.30", "22.00"};
+    private Spinner spinner;
+    private ArrayAdapter<String> spinnerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        pedido = new ArrayList<Utils.ElementoMenu>();
+        txtPedido = (TextView) findViewById(R.id.txtPedido);
+        buttonConfirmarPedido = (Button) findViewById(R.id.buttonConfirmarPedido);
+        buttonReiniciar = (Button) findViewById(R.id.buttonReiniciar);
 
-        textView2 = (TextView) findViewById(R.id.textView2);
+        spinner = (Spinner) findViewById(R.id.spinner);
+        spinnerAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,horarios);
+        spinner.setAdapter(spinnerAdapter);
 
         miLista = (ListView) findViewById(R.id.lista);
         buttonAgregar = (Button)findViewById(R.id.buttonAgregar);
@@ -83,14 +90,30 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
+        buttonConfirmarPedido.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pedidoConfirmado = true;
+            }
+        });
+
+        buttonReiniciar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                reiniciarPedido();
+            }
+        });
+
         buttonAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(elementoSeleccionado != null && !pedidoConfirmado ){
                     pedido.add(elementoSeleccionado);
-                    String prevText = (String) textView2.getText();
+                    String prevText = (String) txtPedido.getText();
 
-                    textView2.setText(prevText + "\n" +  elementoSeleccionado.toString());
+                    txtPedido.setText(prevText + "\n" +  elementoSeleccionado.toString());
 
                 }
                 else if (!pedidoConfirmado){
@@ -119,11 +142,25 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private  void reiniciarPedido(){
+        clearListViewSelection();
+        pedido.clear();
+        txtPedido.setText("");
+    }
+
+    private void clearListViewSelection(){
+        elementoSeleccionado = null;
+        miLista.clearChoices();
+        miAdaptador.notifyDataSetChanged();
+    }
     private void resetAdapterDataSet(Utils.ElementoMenu[] newDataSet) {
 
         miAdaptador.clear();
+        clearListViewSelection();
         ArrayList<Utils.ElementoMenu> lst = new ArrayList<Utils.ElementoMenu>(Arrays.asList(newDataSet));
         miAdaptador.addAll(newDataSet);
         miAdaptador.notifyDataSetChanged();
     }
+
+
 }

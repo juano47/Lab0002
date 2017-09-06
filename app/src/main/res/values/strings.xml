@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Lab0002</string>
+    <string name="txtPedido" />
+    <string name="buttonReiniciarText">REINICIAR</string>
+    <string name="buttonConfirmarPedidoText">CONFIRMAR PEDIDO</string>
+    <string name="buttonAgregarText">AGREGAR</string>
+    <string name="rbtnBebidaText">Bebida</string>
+    <string name="rbtnPostreText">Postre</string>
+    <string name="rbtnPlatoText">Plato</string>
+    <string name="switchReservaText">Reserva 1 hora antes</string>
+    <string name="txtHorarioText">Seleccione el horario</string>
+    <string name="tglOffText">RESERVAR MESA</string>
+    <string name="tglOnText">DELIVERY</string>
+    <string name="txtHeaderText">Pedite la cena!!!</string>
 </resources>

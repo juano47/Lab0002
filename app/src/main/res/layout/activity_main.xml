@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtPediteLaCena"
-        android:text="Pedite la cena!!!"
+        android:text="@string/txtHeaderText"
         android:textSize="26dp"/>
 
     <ToggleButton
@@ -20,13 +20,13 @@
         android:text="New ToggleButton"
         android:id="@+id/toggleButton"
         android:layout_below="@+id/txtPediteLaCena"
-        android:textOff="RESERVAR MESA"
-        android:textOn="DELIVERY" />
+        android:textOff="@string/tglOffText"
+        android:textOn="@string/tglOnText" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Seleccione el horario"
+        android:text="@string/txtHorarioText"
         android:id="@+id/textView" />
 
     <Spinner
@@ -42,14 +42,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textView2" />
+            android:text="@string/txtPedido"
+            android:id="@+id/txtPedido" />
     </ScrollView>
 
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Reserva 1 hora antes     "
+        android:text="@string/switchReservaText"
         android:id="@+id/switch1"
         android:layout_gravity="right" />
 
@@ -63,7 +63,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Plato"
+            android:text="@string/rbtnPlatoText"
             android:id="@+id/radioButtonPlato"
             android:layout_marginRight="20dp"
             android:checked="true"/>
@@ -71,14 +71,14 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Postre"
+            android:text="@string/rbtnPostreText"
             android:id="@+id/radioButtonPostre"
             android:layout_marginRight="20dp"/>
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bebida"
+            android:text="@string/rbtnBebidaText"
             android:id="@+id/radioButtonBebida"
             android:layout_marginRight="20dp"/>
     </RadioGroup>
@@ -92,19 +92,19 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="AGREGAR"
+            android:text="@string/buttonAgregarText"
             android:id="@+id/buttonAgregar" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CONFIRMAR PEDIDO"
+            android:text="@string/buttonConfirmarPedidoText"
             android:id="@+id/buttonConfirmarPedido" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="REINICIAR"
+            android:text="@string/buttonReiniciarText"
             android:id="@+id/buttonReiniciar" />
     </LinearLayout>
 
